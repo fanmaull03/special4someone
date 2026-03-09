@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special for Lala 🌙</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Layar Surat (Awal) -->
+    <div class="envelope-screen" id="envelopeScreen">
+        <div class="envelope-wrapper" onclick="openEnvelope()">
+            <div class="envelope" id="envelope">
+                <div class="env-back"></div>
+                <div class="env-letter" id="envLetter">
+                    <p>ada sesuatu nih buat kamu Lala ❤️</p>
+                </div>
+                <div class="env-left"></div>
+                <div class="env-right"></div>
+                <div class="env-bottom"></div>
+                <div class="env-flap"></div>
+            </div>
+        </div>
+        <p class="click-hint" id="clickHint">klik suratnya ya Lala!</p>
+    </div>
+
+    <!-- Layar Utama (Setelah Buka Surat) -->
+    <div class="main-screen" id="mainScreen">
+        <div class="floating-elements" id="bgItems"></div>
+
+        <div class="container" id="mainCard">
+            <!-- Hiasan Pita -->
+            <div class="ribbon"><span>For Lala ❤️</span></div>
+
+            <div id="askSection">
+                <h1>allo, Lala! ✨</h1>
+                <p id="typedText" style="min-height: 100px;"></p>
+                
+                <div class="btn-group" id="btnGroup" style="opacity: 0; visibility: hidden; transition: opacity 1s;">
+                    <button id="yesBtn" onclick="accepted()">iya mau</button>
+                    <button id="noBtn" onmouseover="runAway()" onclick="runAway()">gamau</button>
+                </div>
+            </div>
+
+            <div id="finalMessage">
+                <h1 style="font-size: 3rem; margin:0;">💖💕</h1>
+                <p class="success-text" style="margin-top:20px;"><b>ciee mau hehew</b> <br>  bisa atur tanggal dan jamnya ya lala ❤️</p>
+                <div class="form-group">
+                    <input type="text" id="jadwalInput" placeholder="Contoh: Sabtu jam 5 sore yaa">
+                    <button id="sendWaBtn" onclick="sendToWhatsApp()">Kirim 🚀</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
