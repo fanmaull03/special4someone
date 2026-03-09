@@ -4,6 +4,12 @@ function openEnvelope() {
   if (isOpened) return;
   isOpened = true;
 
+  // Putar musik — aman dari blokir browser karena dipicu langsung dari klik user
+  const bgMusic = document.getElementById("bgMusic");
+  if (bgMusic) {
+    bgMusic.play().catch(e => console.log("Audio error:", e));
+  }
+
   const env = document.getElementById("envelope");
   const letter = document.getElementById("envLetter");
   const hint = document.getElementById("clickHint");
@@ -27,12 +33,6 @@ function openEnvelope() {
 function initMainScreen() {
   document.getElementById("mainScreen").classList.add("visible");
   initFloatingIcons();
-
-  // Putar lagu Daniel Caesar - Hold Me Down saat mainCard muncul
-  const bgMusic = document.getElementById("bgMusic");
-  if (bgMusic) {
-    bgMusic.play().catch(e => console.log("Gagal memutar audio:", e));
-  }
 
   // Memulai efek mengetik setelah jeda 1 detik (setelah layar utama muncul)
   setTimeout(() => {
